@@ -10,7 +10,7 @@ module ActiveDecorator
     end
 
     def decorate(obj)
-      return if obj.nil?
+      return if NilClass === obj
 
       if Array === obj
         obj.each do |r|
