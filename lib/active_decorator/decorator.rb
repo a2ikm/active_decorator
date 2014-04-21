@@ -25,6 +25,8 @@ module ActiveDecorator
           end
           alias_method_chain :to_a, :decorator
         end
+      elsif defined?(BasicObject) && BasicObject === obj
+        return obj
       else
         d = decorator_for obj.class
         return obj unless d
